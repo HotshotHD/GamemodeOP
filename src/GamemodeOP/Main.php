@@ -18,12 +18,9 @@ class Main extends PluginBase implements Listener{
     public function onJoinEvent(PlayerJoinEvent $event){
         $player = $event->getPlayer();
         if($player->isOp()){
-            return true;
-        }else{
+            $player->setGamemode(1);
+        } else {
             $player->setGamemode(0);
-            $player->sendTip("You are in Gamemode 0.")
+            $player->sendTip("You are in Gamemode 0.");
         }
-    }else{
-        $player->setGamemode(1)
-}
 }
